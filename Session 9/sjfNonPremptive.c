@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<limits.h>
 
 typedef struct {
     int pid, AT, BT, ST, FT, TAT, WT;
@@ -50,8 +51,10 @@ void sjfNonPremptiveScheduling(Process *p, int n){
             }
         }
 
-        if(idx == -1)
-            currTime++; // No process is ready, increment time
+        if(idx == -1) {
+            // No process is ready
+            currTime++;
+        }
         else {
             p[idx].ST = currTime;
             p[idx].FT = currTime + p[idx].BT;
