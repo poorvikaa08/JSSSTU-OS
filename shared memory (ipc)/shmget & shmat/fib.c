@@ -22,8 +22,10 @@ int main(int arg, char *argv[]){
         n2 = 1;
         sprintf(ptr, "%d ", n1);
         ptr += strlen(ptr);
+
         sprintf(ptr, "%d ", n2);
         ptr += strlen(ptr);
+
         while(k != i){
                 n3 = n2+n1;
                 sprintf(ptr, "%d ", n3);
@@ -32,6 +34,7 @@ int main(int arg, char *argv[]){
                 ptr += strlen(ptr);
                 k++;
         }
+        
         ptr += strlen(ptr);
         shmctl(shmid, IPC_RMID, NULL);
         return 0;

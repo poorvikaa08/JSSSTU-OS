@@ -7,12 +7,12 @@ int main(){
     pid_t my_pid, parent_pid, child_pid;
     child_pid = fork(); // Create a child process
 
-    if(child_pid < 0){
+    if (child_pid < 0){
         printf("\nFork failed. Exiting\n");
         exit(1);
     }
 
-    if(child_pid == 0){
+    if (child_pid == 0){
         printf("\n[CHILD] This is the child process.\n");
         my_pid = getpid();
         parent_pid = getppid();

@@ -14,7 +14,7 @@ void *sum(void *arg){
         SUM += i;
     }
 
-    printf("\nSum thread complted!");
+    printf("\nSum thread completed!");
 }
 
 void *mul(void *arg){

@@ -19,6 +19,7 @@ void fcfs(Process *p, int n){
         p[i].TAT = elapsedTime - p[i].AT;
         p[i].CT = elapsedTime;
 
+        
         printf("| (%d)  P-%d  (%d)", elapsedTime-p[i].BT, p[i].pid, elapsedTime);
 
     }
@@ -50,15 +51,12 @@ void main(){
 
         printf("Enter the arrival time and burst time: ");
         scanf("%d %d", &p[i].AT, &p[i].BT);
-
-        printf("\n");;
     }
 
     // Sort processes by arrival time
-
     for(int i=0; i<n-1; i++){
         for(int j=0; j<n-i-1; j++){
-            if(p[j].AT < p[j+1].AT){
+            if(p[j].AT > p[j+1].AT){
                 Process temp = p[j];
                 p[j] = p[j+1];
                 p[j+1] = temp;
